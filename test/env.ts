@@ -2,6 +2,7 @@ import fs from "node:fs";
 
 const privateKey = fs.readFileSync("test/fixtures/cognito_key", "base64");
 const publicKey = fs.readFileSync("test/fixtures/cognito_key.pub", "base64");
+// console.log(privateKey);
 
 Object.assign(process.env, {
   NEW_USER_ENDPOINT: "http://localhost:3000/user/cognito",

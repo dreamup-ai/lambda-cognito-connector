@@ -51,7 +51,7 @@ export interface Response {}
 export const handler = async (event: ConfirmSignup): Promise<ConfirmSignup> => {
   try {
     const body = JSON.stringify(event);
-    await fetch(NEW_USER_ENDPOINT, {
+    const resp = await fetch(NEW_USER_ENDPOINT, {
       method: "POST",
       body,
       headers: {
@@ -59,6 +59,9 @@ export const handler = async (event: ConfirmSignup): Promise<ConfirmSignup> => {
         [SIGNATURE_HEADER]: sign(body),
       },
     });
+    if (!resp.ok) {
+      throw new Error(await resp.text());
+    }
   } catch (e) {
     console.error(e);
   }
