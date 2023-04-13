@@ -1,0 +1,29 @@
+{
+  "name": "lambda-cognito-connector",
+  "version": "1.0.0",
+  "description": "This is a lambda that connects cognito to dreamup",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "test": "mocha --require dist/test/env.js --recursive dist/test",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreamup-ai/lambda-cognito-connector.git"
+  },
+  "author": "Shawn Rushefsky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dreamup-ai/lambda-cognito-connector/issues"
+  },
+  "homepage": "https://github.com/dreamup-ai/lambda-cognito-connector#readme",
+  "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.15.11",
+    "@types/sinon": "^10.0.13",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "sinon": "^15.0.3"
+  }
+}
